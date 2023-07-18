@@ -1,7 +1,7 @@
 # Gestion_Allocations_Familiales
-<h1>Principales Fonctions :</h1>h1>
+<h1>Principales Fonctions :</h1>
 
-1-Gestion des droits aux prestations familiales :
+<h3>1-Gestion des droits aux prestations familiales :
 
 - Inscription des enfants.
 - Ouverture des droits aux allocations familiales.
