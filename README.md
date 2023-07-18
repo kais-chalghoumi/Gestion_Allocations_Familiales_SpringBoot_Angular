@@ -1,7 +1,7 @@
 # Gestion_Allocations_Familiales
 <h1>Principales Fonctions :</h1>
 
-<h3>1-Gestion des droits aux prestations familiales :
+<h3>1-Gestion des droits aux prestations familiales :</h3>
 
 - Inscription des enfants.
 - Ouverture des droits aux allocations familiales.
@@ -13,7 +13,7 @@
 - Consultation des droits salaires et des montants des prestations familiales perçus .
 
 
-2-Prise en charge des droits pour le décompte des prestations familiales :
+<h3>2-Prise en charge des droits pour le décompte des prestations familiales :</h3>
 
 - Extraction des mouvements droit (provenant de saisies de mutations enfants, salaire unique.)
 - Extraction des mouvements salaires.
@@ -21,7 +21,7 @@
 - Recherche des assurés débiteurs et détermination du fichier Net des payements AF et SU.
 
 
-3-Mandatement des prestations familiales :
+<h3>3-Mandatement des prestations familiales :</h3>
 
 - Création du fichier des mandats à partir du fichier Net à payer et du fichier Nom et adresse assuré.
 - Mise à jour du fichier des renseignements consultable par les bureaux régionaux.
@@ -32,7 +32,7 @@
 - Edition des états spéciaux.
 
 
-4-Travaux trimestriels et annuels :
+<h3>4-Travaux trimestriels et annuels :</h3>
 
 - Création du fichier des veuves.
 - Création des tuteurs.
