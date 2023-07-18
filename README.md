@@ -40,15 +40,3 @@
 - Travaux de vidange des fichiers.
 
 
-II-2 Utilisateurs :
-
-- Les Bureaux Régionaux.
-- La sous direction des prestations familiales.
-
-
-II-3 Matériel utilisé, Système d'exploitation
-
-- Cette application tourne sur site central 18M9670,
-- Elle a été développée sur machine 118M9370 ,
-- Le système d’exploitation VSE/LSA,
-
