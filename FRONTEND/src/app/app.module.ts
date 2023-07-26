@@ -7,8 +7,12 @@ import { AuthentificationComponent } from './authentification/authentification.c
 import { FooterComponent } from './footer/footer.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HeadComponent } from './head/head.component';
-import { WelcomeComponent } from './welcome/welcome.component';
 import { MutDroitEnfantComponent } from './mut-droit-enfant/mut-droit-enfant.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AcceuilComponent } from './acceuil/acceuil.component';
+import { GestDroitsPrestFamComponent } from './gest-droits-prest-fam/gest-droits-prest-fam.component';
+import { AjouterAssureComponent } from './ajouter-assure/ajouter-assure.component';
+import { EnregistrerEnfantsComponent } from './enregistrer-enfants/enregistrer-enfants.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +21,12 @@ import { MutDroitEnfantComponent } from './mut-droit-enfant/mut-droit-enfant.com
     FooterComponent,
     NavBarComponent,
     HeadComponent,
-    WelcomeComponent,
-    MutDroitEnfantComponent
+    MutDroitEnfantComponent,
+    NotFoundComponent,
+    AcceuilComponent,
+    GestDroitsPrestFamComponent,
+    AjouterAssureComponent,
+    EnregistrerEnfantsComponent,
   ],
   imports: [
     BrowserModule,
