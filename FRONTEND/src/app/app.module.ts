@@ -10,8 +10,7 @@ import { HeadComponent } from './head/head.component';
 import { MutDroitEnfantComponent } from './mut-droit-enfant/mut-droit-enfant.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { GestDroitsPrestFamComponent } from './gest-droits-prest-fam/gest-droits-prest-fam.component';
-import { AjouterAssureComponent } from './ajouter-assure/ajouter-assure.component';
-import { EnregistrerEnfantsComponent } from './enregistrer-enfants/enregistrer-enfants.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +22,7 @@ import { EnregistrerEnfantsComponent } from './enregistrer-enfants/enregistrer-e
     MutDroitEnfantComponent,
     NotFoundComponent,
     GestDroitsPrestFamComponent,
-    AjouterAssureComponent,
-    EnregistrerEnfantsComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
