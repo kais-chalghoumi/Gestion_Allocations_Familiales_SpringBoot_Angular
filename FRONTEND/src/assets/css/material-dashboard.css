@@ -2705,12 +2705,7 @@ progress {
   }
 }
 
-.form-label {
-  margin-bottom: 0.5rem;
-  font-size: 0.875rem;
-  font-weight: 400;
-  color: #7b809a;
-}
+
 
 .col-form-label {
   padding-top: calc(0.5rem + 1px);

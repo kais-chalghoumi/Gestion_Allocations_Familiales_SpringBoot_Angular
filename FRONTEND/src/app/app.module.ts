@@ -9,7 +9,6 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HeadComponent } from './head/head.component';
 import { MutDroitEnfantComponent } from './mut-droit-enfant/mut-droit-enfant.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { AcceuilComponent } from './acceuil/acceuil.component';
 import { GestDroitsPrestFamComponent } from './gest-droits-prest-fam/gest-droits-prest-fam.component';
 import { AjouterAssureComponent } from './ajouter-assure/ajouter-assure.component';
 import { EnregistrerEnfantsComponent } from './enregistrer-enfants/enregistrer-enfants.component';
@@ -23,7 +22,6 @@ import { EnregistrerEnfantsComponent } from './enregistrer-enfants/enregistrer-e
     HeadComponent,
     MutDroitEnfantComponent,
     NotFoundComponent,
-    AcceuilComponent,
     GestDroitsPrestFamComponent,
     AjouterAssureComponent,
     EnregistrerEnfantsComponent,
