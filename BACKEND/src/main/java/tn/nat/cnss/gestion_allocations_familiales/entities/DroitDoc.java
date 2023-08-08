@@ -16,18 +16,18 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name="ASSURE")
-public class Assure implements Serializable {
+@Table(name = "DROIT_DOC_AF")
+public class DroitDoc implements Serializable {
 
 	static final long serialVersionUID = 1L;
-
+	
 	@EmbeddedId
-	AssurePK id;
+	DroitDocPK id;
+
+	@Column(name = "DROIT_LBL")
+	String libDroit;
 	
-	@Column(name="ASS_DERREG")
-	Integer assDerreg;
-	
-	@Column(name="ASS_IU")
-	Integer assIu;
+	@Column(name = "DROIT_LBL_AR")
+	String libDroitAr;
 
 }

@@ -9,8 +9,9 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HeadComponent } from './head/head.component';
 import { MutDroitEnfantComponent } from './mut-droit-enfant/mut-droit-enfant.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { GestDroitsPrestFamComponent } from './gest-droits-prest-fam/gest-droits-prest-fam.component';
 import { TestComponent } from './test/test.component';
+import { ListBeneficiaireComponent } from './list-beneficiaire/list-beneficiaire.component';
+import { AcceuilComponent } from './acceuil/acceuil.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +22,9 @@ import { TestComponent } from './test/test.component';
     HeadComponent,
     MutDroitEnfantComponent,
     NotFoundComponent,
-    GestDroitsPrestFamComponent,
     TestComponent,
+    ListBeneficiaireComponent,
+    AcceuilComponent,
   ],
   imports: [
     BrowserModule,

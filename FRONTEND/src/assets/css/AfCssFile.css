@@ -1,5 +1,6 @@
 html{
 	direction: rtl;
+  background-color: #DEDCCF;
 }
 
 .green-center {
@@ -17,13 +18,19 @@ html{
     color: #005B37;
 }
 
+.middle-div {
+    font-weight: bolder;
+}
+
 .greenText {
     color: #005B37;
+    font-size: medium;
+    font-weight: 500;
 }
 
 .green {
     text-align: center;
-    color: #005B37;
+    color: white;
     background-color: #005B37;
 }
 
@@ -52,7 +59,12 @@ html{
 }
 
 .footer {
-    margin-top: auto; 
+    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
 }
 
 .entete {
@@ -67,7 +79,35 @@ html{
   background-color: #F5F3E5;
 }
 
-.space {
-  background-color: #DFD9C3;
-  height: 2px;
+.FAFAF4 {
+  background-color: #FAFAF4;
 }
+
+.space {
+  height: 8px;
+  background-color: #F5F3E5;
+}
+
+.padding {
+    padding-right: 2%;
+    padding-left: 2%;
+}
+
+.tdTab {
+    width: 250px;
+    padding-right: 10%;
+}
+
+th {
+    width: 200px;
+    padding-right: 2%;
+}
+
+.th2 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #005B37;
+    color: white;
+}
+
+

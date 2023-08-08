@@ -6,28 +6,25 @@ import lombok.experimental.FieldDefaults;
 import java.io.Serializable;
 
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
-@Entity
 @Getter
 @Setter
+@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name="ASSURE")
-public class Assure implements Serializable {
-
+@Embeddable
+public class AssurePK implements Serializable {
+	
 	static final long serialVersionUID = 1L;
 
-	@EmbeddedId
-	AssurePK id;
-	
-	@Column(name="ASS_DERREG")
-	Integer assDerreg;
-	
-	@Column(name="ASS_IU")
-	Integer assIu;
+	@Column(name="ASS_MAT")
+	Integer assMat;
+
+	@Column(name="ASS_CLE")
+	Integer assCle;
 
 }
+

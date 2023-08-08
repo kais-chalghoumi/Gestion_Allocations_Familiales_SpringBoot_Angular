@@ -6,8 +6,8 @@ import lombok.experimental.FieldDefaults;
 import java.io.Serializable;
 
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -16,18 +16,27 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name="ASSURE")
-public class Assure implements Serializable {
+@Table(name = "USERAGT")
+public class UserAgt implements Serializable {
 
 	static final long serialVersionUID = 1L;
-
-	@EmbeddedId
-	AssurePK id;
+    
+	@Id
+	@Column(name = "LOGIN")
+	int login;
 	
-	@Column(name="ASS_DERREG")
-	Integer assDerreg;
+	@Column(name = "NOM")
+	String ident;
 	
-	@Column(name="ASS_IU")
-	Integer assIu;
-
+	@Column(name = "PROFIL_ID")
+	int profil;
+	
+	@Column(name = "CODEBR")
+	int br;
+	 
+	@Column(name = "DIR_DSG")
+	String bureau;
+	
+	@Column(name = "IDENT_AR")
+	String identAr;
 }

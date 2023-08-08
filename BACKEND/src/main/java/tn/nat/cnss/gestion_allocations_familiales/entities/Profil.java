@@ -2,8 +2,9 @@ package tn.nat.cnss.gestion_allocations_familiales.entities;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+
 import javax.persistence.*;
-import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -11,13 +12,18 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Profil implements Serializable {
+@Table(name = "profil")
+public class Profil implements java.io.Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer ID;
-    String LABEL;
+	static final long serialVersionUID = -12488413258427000L;
 
-    @OneToOne
-    AgtCNSS AgtCNSS ;
+	@Id
+	@Column(name = "ID")
+	Integer id;
+
+	@Column(name = "LABEL")
+	String label;
+
+	@OneToMany(mappedBy = "profil")
+	Set<Utilisateur> utilisateurs;
 }
