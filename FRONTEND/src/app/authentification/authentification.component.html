@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- head -->
-<app-head></app-head>
-<!-- head -->
+<head>
+</head>
 <body class="bg-white">
   <div class="green-center">
     <img src="/assets/img/drapeau.png">
@@ -19,15 +18,22 @@
           </div>
         </div>
         <div class="card-body">
-          <form role="form" class="">
+          <form #f="ngForm">
             <div class="input-group input-group-outline my-3">
-              <input type="email" class="form-control" placeholder="إسم المستخدم">
+              <input class="form-control" placeholder="إسم المستخدم" aria-label="login" type="login" id="login" name="login"
+              [(ngModel)]="utilisateur.login">
             </div>
             <div class="input-group input-group-outline mb-3">
-              <input type="password" class="form-control" placeholder="كلمة السر">
+              <input class="form-control" placeholder="كلمة السر" aria-label="pwd" type="text" id="pwd" name="pwd"
+              [(ngModel)]="utilisateur.pwd">
+            </div>
+            <div *ngIf="errorMessage" class="alert-container">
+              <div class="alert alert-danger" [ngClass]="{'show': errorMessage}">
+                {{ errorMessage }}
+              </div>
             </div>
             <div class="">
-              <button type="button" class="green border-radius-lg text-white btn w-100 my-4 mb-2" style="font-size: large;">دخول</button>
+              <button type="submit" class="green border-radius-lg text-white btn w-100 my-4 mb-2" style="font-size: large;" (click)="Check()">دخول</button>
             </div>
           </form>
         </div>

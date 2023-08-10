@@ -23,16 +23,16 @@ public class UserAgt implements Serializable {
     
 	@Id
 	@Column(name = "LOGIN")
-	int login;
+	Integer login;
 	
 	@Column(name = "NOM")
 	String ident;
 	
 	@Column(name = "PROFIL_ID")
-	int profil;
+	Integer profil;
 	
 	@Column(name = "CODEBR")
-	int br;
+	Integer br;
 	 
 	@Column(name = "DIR_DSG")
 	String bureau;

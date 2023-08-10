@@ -1,0 +1,68 @@
+html{
+	direction: rtl;
+}
+
+.green-center {
+    text-align: center;
+    color: #005B37;
+}
+
+.center {
+    text-align: center;
+    color: #005B37;
+}
+
+.greenText {
+    color: #005B37;
+    font-size: medium;
+    font-weight: 500;
+}
+
+.green {
+    text-align: center;
+    color: white;
+    background-color: #005B37;
+}
+
+.margingTop {
+    top: 100%;
+    padding: 50px;
+}
+
+.footer {
+    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.alert-container {
+  position: fixed;
+  top: 80%;
+  left: 0%;
+  width: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 0;
+}
+
+.alert {
+  position: relative;
+  transition: opacity 0.5s;
+  opacity: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.show {
+  opacity: 1;
+}
+
+.alert-danger {
+  background-color: #f44336;
+  color: white;
+}

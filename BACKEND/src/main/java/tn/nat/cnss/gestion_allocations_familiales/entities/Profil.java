@@ -1,5 +1,6 @@
 package tn.nat.cnss.gestion_allocations_familiales.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -24,6 +25,7 @@ public class Profil implements java.io.Serializable {
 	@Column(name = "LABEL")
 	String label;
 
+	@JsonIgnore
 	@OneToMany(mappedBy = "profil")
 	Set<Utilisateur> utilisateurs;
 }
