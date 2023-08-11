@@ -1,42 +1,44 @@
 <div class="space"></div>
 <div class="greenText">
-    <form>
+    <form #f="ngForm">
         <div class="center">
             <label class="padding">رقم المضمون الاجتماعي</label>
-            <input class="border-radius-lg">
+            <input class="border-radius-lg" aria-label="assMat" type="number" id="assMat" name="assMat"
+            [(ngModel)]="assMat">
             <label class="padding">المفتاح</label>
-            <input class="border-radius-lg ">
-            <button class="btn greenText">بحث</button>
-            <button class="btn greenText">إلغاء</button>
+            <input class="border-radius-lg" aria-label="assCle" type="number" id="assCle" name="assCle"
+            [(ngModel)]="assCle">
+            <button class="btn greenText" type="submit" (click)="search()">بحث</button>
+            <button class="btn greenText" type="submit">إلغاء</button>
         </div>
     </form>
 </div>
 <div class="space"></div>
 <div>
-    <table> 
+    <table class="custom-table"> 
         <tbody>
             <tr>
-                <td class="tdTab">
-                    <label class="greenText">المعرف الوحيد</label>
-                </td>
-                <td>
-                    <label></label>
-                </td>
-            </tr>
-            <tr>
-                <td class="tdTab">
-                    <label class="greenText">الهوية</label>
-                </td>
-                <td>
-                    <label></label>
-                </td>
-            </tr>
-            <tr>
-                <td class="tdTab">
-                    <label class="greenText">العنوان</label>
+                <td class="greenText tdTab">
+                    المعرف الوحيد
                 </td>
                 <td class="">
-                    <label></label>
+                    {{vassure.assIu}}
+                </td>
+            </tr>
+            <tr>
+                <td class="greenText tdTab">
+                    الهوية
+                </td>
+                <td class="">
+                    {{vassure.assNom}} {{vassure.assPrenom}}
+                </td>
+            </tr>
+            <tr>
+                <td class="greenText tdTab">
+                    العنوان
+                </td>
+                <td class="">
+                    {{vassure.adresse}}
                 </td>
             </tr>
         </tbody>

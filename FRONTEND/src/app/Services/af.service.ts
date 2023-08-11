@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Utilisateur } from '../Models/Utilisateur';
 import { Agtcnss } from '../Models/Agtcnss';
+import { Vassure } from '../Models/Vassure';
 
 @Injectable({
   providedIn: 'root',
@@ -20,5 +21,11 @@ export class AFService {
 
   findByIdtMatag(login: number): Observable<Agtcnss> {
     return this.http.get<Agtcnss>(this.URL + '/findByIdtMatag/' + login);
+  }
+
+  findByAssMatAndAssCle(assMat: number, assCle: number): Observable<Vassure> {
+    return this.http.get<Vassure>(
+      this.URL + '/findByAssMatAndAssCle/' + assMat + '/' + assCle
+    );
   }
 }
