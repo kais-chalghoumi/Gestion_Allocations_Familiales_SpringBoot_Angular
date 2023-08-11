@@ -3,29 +3,33 @@
 <!-- head -->
 <app-head></app-head>
 <!-- head -->
-<body  class="FAFAF4">
-    <div class="entete">
-        <div class="left-div ">
-            <p><img src="/assets/img/drapeau.png"> الجمهورية التونسية <br> الصندوق الوطني للضمان الاجتماعي
-            <br><img src="/assets/img/logo.gif"></p>
-        </div>
+<body>
+    <main class="FAFAF4">
         <div class="">
-            <br><br>
-            <h3 class="middle-div">المنافع العائلية</h3>
-            <h3 class="middle-div">صفحة الاستقبال</h3>
+            <div class="entete">
+                <div class="left-div">
+                    <p><img src="/assets/img/drapeau.png"> الجمهورية التونسية <br> الصندوق الوطني للضمان الاجتماعي
+                    <br><img src="/assets/img/logo.gif"></p>
+                </div>
+                <div class="middle-div">
+                    <br><br>
+                    <h3 class="greenText">المنافع العائلية</h3>
+                    <h3 class="greenText">صفحة الاستقبال</h3>
+                </div>
+                <div class="right-div">
+                    <br><br><br><br>
+                    <h6 class="greenText">{{agtcnss.idtPrnagar}} {{agtcnss.idtNomagar}} - {{agtcnss.dirDsgar}}</h6>
+                </div>
+            </div>
+            <div class="space"></div>
+            <div class="border-radius-lg">
+            <!-- Navbar -->
+                <app-nav-bar></app-nav-bar>
+            <!-- End Navbar -->
+            </div>
+            <app-list-beneficiaire></app-list-beneficiaire>
         </div>
-        <div class="right-div">
-            <br><br><br><br>
-            <h6 class="greenText" style="width: 300px;">current user info</h6>
-        </div>
-    </div>
-    <div class="space"></div>
-    <div class="border-radius-lg">
-    <!-- Navbar -->
-    <app-nav-bar></app-nav-bar>
-    <!-- End Navbar -->
-    </div>
-    <app-list-beneficiaire></app-list-beneficiaire>
+    </main>
+    <app-footer></app-footer>
 </body>
-<app-footer></app-footer>
 </html>

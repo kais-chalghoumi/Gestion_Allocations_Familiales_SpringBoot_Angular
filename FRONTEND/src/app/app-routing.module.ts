@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'authentification', pathMatch: 'full' },
   { path: 'authentification', component: AuthentificationComponent },
   { path: 'acceuil', component: AcceuilComponent },
-  { path: 'nvt', component: MutDroitEnfantComponent },
+  { path: 'mvt', component: MutDroitEnfantComponent },
   { path: 'test', component: TestComponent },
   { path: 'test', component: TestComponent },
   { path: '**', component: NotFoundComponent },
