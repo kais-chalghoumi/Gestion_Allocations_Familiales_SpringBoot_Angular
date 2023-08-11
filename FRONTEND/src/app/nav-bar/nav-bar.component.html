@@ -7,16 +7,7 @@
           <a class="btn btn-outline-success btn-sm mb-0 me-2 greenText hover border-radius-lg "  target="_blank" >تسجيل حقوق الابناء</a>
         </li>
         <li class="nav-item d-flex align-items-center">
-          <a class="btn btn-outline-success btn-sm mb-0 me-2 greenText hover border-radius-lg " target="_blank" >فتح الحقوق في الاجر الوحيد</a>
-        </li>
-        <li class="nav-item d-flex align-items-center">
-          <a class="btn btn-outline-success btn-sm mb-0 me-2 greenText hover border-radius-lg" target="_blank" >تدوين الشخص الحاضن</a>
-        </li>
-        <li class="nav-item d-flex align-items-center">
-          <a class="btn btn-outline-success btn-sm mb-0 me-2 greenText hover border-radius-lg" target="_blank" >فتح الحقوق للأرامل</a>
-        </li>
-        <li class="nav-item d-flex align-items-center">
-          <a class="btn btn-outline-success btn-sm mb-0 me-2 greenText hover border-radius-lg" target="_blank" >تدوين العمال المفصولين لأسباب اقتصادية</a>
+          <a class="btn btn-outline-success btn-sm mb-0 me-2 greenText hover border-radius-lg " target="_blank" >فتح الحق في الاجر الوحيد</a>
         </li>
         <li class="nav-item d-flex align-items-center">
           <a class="btn btn-outline-success btn-sm mb-0 me-2 greenText hover border-radius-lg" target="_blank" >تدوين مبلغ الدين</a>
@@ -24,8 +15,11 @@
         <li class="nav-item d-flex align-items-center">
           <a class="btn btn-outline-success btn-sm mb-0 me-2 greenText hover border-radius-lg" target="_blank" >اعادة توزيع الحوالات</a>
         </li>
+        <li class="nav-item d-flex align-items-center">
+          <a class="btn btn-outline-success btn-sm mb-0 me-2 greenText hover border-radius-lg" target="_blank" >تدوين الشخص الحاضن</a>
+        </li>
       </ul>
     </div>
-    <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 greenText"  style="text-decoration: underline;"  >خروج </a>
+    <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 greenText" (click)="reset()" [routerLink]="['/authentification']" style="text-decoration: underline;">خروج </a>
   </div>
 </nav>

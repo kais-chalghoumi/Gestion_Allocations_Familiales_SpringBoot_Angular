@@ -18,8 +18,17 @@ html{
     color: #005B37;
 }
 
+.right-div {
+    padding-left: 2%;
+}
+
+.left-div {
+    padding-right: 2%;
+}
+
 .middle-div {
     font-weight: bolder;
+    padding-left: 20%;
 }
 
 .greenText {

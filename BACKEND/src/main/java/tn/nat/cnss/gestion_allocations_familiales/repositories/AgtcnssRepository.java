@@ -6,4 +6,6 @@ import tn.nat.cnss.gestion_allocations_familiales.entities.Agtcnss;
 
 @Repository
 public interface AgtcnssRepository extends JpaRepository<Agtcnss,Integer> {
+
+    Agtcnss findByIdtMatag (Integer IdtMatag);
 }

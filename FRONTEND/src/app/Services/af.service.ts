@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Utilisateur } from '../Models/Utilisateur';
 import { Observable } from 'rxjs';
+import { Utilisateur } from '../Models/Utilisateur';
+import { Agtcnss } from '../Models/Agtcnss';
 
 @Injectable({
   providedIn: 'root',
 })
-export class UtilisateurService {
+export class AFService {
   URL = 'http://localhost:8083/af';
 
   constructor(private http: HttpClient) {}
@@ -15,5 +16,9 @@ export class UtilisateurService {
     return this.http.get<Utilisateur>(
       this.URL + '/findByLoginAndPwd/' + login + '/' + pwd
     );
+  }
+
+  findByIdtMatag(login: number): Observable<Agtcnss> {
+    return this.http.get<Agtcnss>(this.URL + '/findByIdtMatag/' + login);
   }
 }
