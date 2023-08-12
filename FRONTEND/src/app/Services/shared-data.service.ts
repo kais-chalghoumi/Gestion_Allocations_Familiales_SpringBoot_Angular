@@ -6,15 +6,34 @@ import { Injectable } from '@angular/core';
 export class SharedDataService {
   constructor() {}
 
-  private sharedVariableKey = 'sharedVariable';
-  private login!: number;
+  private sharedLogin = 'sharedLogin';
+  private sharedAssMat = 'sharedAssMat';
+  private sharedAssCle = 'sharedAssCle';
 
   setUserLogin(value: number) {
-    localStorage.setItem(this.sharedVariableKey, JSON.stringify(value));
+    localStorage.setItem(this.sharedLogin, JSON.stringify(value));
   }
 
   getUserLogin(): number {
-    const value = localStorage.getItem(this.sharedVariableKey);
+    const value = localStorage.getItem(this.sharedLogin);
+    return value ? JSON.parse(value) : null;
+  }
+
+  setAssMat(value: number) {
+    localStorage.setItem(this.sharedAssMat, JSON.stringify(value));
+  }
+
+  getAssMat(): number {
+    const value = localStorage.getItem(this.sharedAssMat);
+    return value ? JSON.parse(value) : null;
+  }
+
+  setAssCle(value: number) {
+    localStorage.setItem(this.sharedAssCle, JSON.stringify(value));
+  }
+
+  getAssCle(): number {
+    const value = localStorage.getItem(this.sharedAssCle);
     return value ? JSON.parse(value) : null;
   }
 }

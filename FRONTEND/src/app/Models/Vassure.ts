@@ -6,7 +6,7 @@ export class Vassure {
   assPrenom!: string;
   assDtnais!: Date;
   burCod!: number;
-  assIu!: number;
+  assIu!: string;
   benIdu!: number;
   assDerreg!: number;
   codpos!: number;

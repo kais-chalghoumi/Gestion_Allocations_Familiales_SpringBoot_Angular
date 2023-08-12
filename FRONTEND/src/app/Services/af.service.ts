@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Utilisateur } from '../Models/Utilisateur';
 import { Agtcnss } from '../Models/Agtcnss';
 import { Vassure } from '../Models/Vassure';
+import { VueAF } from '../Models/VueAF';
 
 @Injectable({
   providedIn: 'root',
@@ -26,6 +27,12 @@ export class AFService {
   findByAssMatAndAssCle(assMat: number, assCle: number): Observable<Vassure> {
     return this.http.get<Vassure>(
       this.URL + '/findByAssMatAndAssCle/' + assMat + '/' + assCle
+    );
+  }
+
+  getAllByAssMatOrderByRangBen(assMat: number): Observable<VueAF[]> {
+    return this.http.get<VueAF[]>(
+      this.URL + '/getAllByAssMatOrderByRangBen/' + assMat
     );
   }
 }

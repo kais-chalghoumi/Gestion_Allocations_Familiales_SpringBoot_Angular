@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
@@ -14,6 +13,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { TestComponent } from './test/test.component';
 import { ListBeneficiaireComponent } from './list-beneficiaire/list-beneficiaire.component';
 import { AcceuilComponent } from './acceuil/acceuil.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,8 @@ import { AcceuilComponent } from './acceuil/acceuil.component';
     HttpClientModule,
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
