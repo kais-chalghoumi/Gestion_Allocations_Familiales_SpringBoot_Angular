@@ -1,0 +1,94 @@
+<div class="space"></div>
+<div class="greenText">
+    <form #f="ngForm">
+        <div class="center">
+            <label class="padding">رقم المضمون الاجتماعي</label>
+            <input class="border-radius-lg" aria-label="assMat" type="text" id="assMat" name="assMat"
+            [(ngModel)]="assMat">
+            <label class="padding">المفتاح</label>
+            <input class="border-radius-lg" aria-label="assCle" type="text" id="assCle" name="assCle"
+            [(ngModel)]="assCle">
+            <button class="btn greenText" type="submit" (click)="search()">بحث</button>
+            <button class="btn greenText" type="submit" (click)="cancel()">إلغاء</button>
+        </div>
+        <div *ngIf="errorMessage" class="alert-container">
+            <div class="alert alert-danger" [ngClass]="{'show': errorMessage}">
+            {{ errorMessage }}
+            </div>
+        </div>
+    </form>
+</div>
+<div class="space"></div>
+<div>
+    <table class="custom-table"> 
+        <tbody>
+            <tr>
+                <td class="greenText tdTab">
+                    المعرف الوحيد
+                </td>
+                <td class="">
+                    {{vassure.assIu}}
+                </td>
+            </tr>
+            <tr>
+                <td class="greenText tdTab">
+                    الهوية
+                </td>
+                <td class="">
+                    {{vassure.assNom}} {{vassure.assPrenom}}
+                </td>
+            </tr>
+            <tr>
+                <td class="greenText tdTab">
+                    العنوان
+                </td>
+                <td class="">
+                    {{vassure.adresse}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="space"></div>
+<table>
+    <thead>
+        <tr>
+            <th class="th2">المعرف الوحيد</th>
+            <th class="th2">اللقب</th>
+            <th class="th2">الأسم</th>
+            <th class="th2">تاريخ الميلاد</th>
+            <th class="th2">الرتبة</th>
+            <th class="th2">رمز</th>
+            <th class="th2">الحق في المنافع</th>
+            <th class="th2">رمز الوثيقة</th>
+            <th class="th2">بداية الانتفاع</th>
+            <th class="th2">نهاية الانتفاع</th>
+            <th class="th2"></th>
+        </tr>
+    </thead>
+    <tbody *ngIf="found == true; else emptyRow">
+        <tr *ngFor="let c of vueAf">
+            <td class="centerBlack">{{c.benIduCnss}}</td>
+            <td class="centerBlack">{{c.benNom}}</td>
+            <td class="centerBlack">{{c.benPrenom}}</td>
+            <td class="centerBlack">{{c.benDtnais}}</td>
+            <td class="centerBlack">{{c.rangBen}}</td>
+            <td class="centerBlack">{{c.compte}}</td>
+            <td class="centerBlack">{{c.droit}}</td>
+            <td class="centerBlack">{{c.docBen}}</td>
+            <td class="centerBlack">{{c.dateDB}}</td>
+            <td class="centerBlack">{{c.dateFin}}</td>
+            <td class="centerBlack"><a [routerLink]="'/test'"><i class="bi bi-search"></i></a></td>
+        </tr>
+    </tbody>
+    <ng-template #emptyRow>
+        <tbody>
+            <tr>
+                <td colspan="11">القائمة فارغة</td>
+            </tr>
+        </tbody>
+    </ng-template>
+</table>
+
+<!-- ----------------------------------------------------------------------- -->
+<!-- Button trigger modal -->
