@@ -18,4 +18,9 @@ public class VueAFServicesImpl implements VueAFServicesInterface{
     public List<VueAF> getAllByAssMatOrderByRangBen(Integer assMat) {
         return vueAFRepository.getAllByAssMatOrderByRangBen(assMat);
     }
+
+    @Override
+    public VueAF findByBenIduCnss(Integer benIduCnss) {
+        return vueAFRepository.findByBenIduCnss(benIduCnss);
+    }
 }

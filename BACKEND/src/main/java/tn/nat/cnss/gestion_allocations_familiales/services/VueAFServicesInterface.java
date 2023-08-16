@@ -7,4 +7,5 @@ import java.util.List;
 public interface VueAFServicesInterface {
 
     List<VueAF> getAllByAssMatOrderByRangBen (Integer assMat);
+    VueAF findByBenIduCnss (Integer benIduCnss);
 }

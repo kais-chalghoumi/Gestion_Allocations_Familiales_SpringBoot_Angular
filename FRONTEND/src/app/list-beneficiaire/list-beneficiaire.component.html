@@ -1,6 +1,6 @@
 <div class="space"></div>
 <div class="greenText">
-    <form #f="ngForm">
+    <form #f1="ngForm">
         <div class="center">
             <label class="padding">رقم المضمون الاجتماعي</label>
             <input class="border-radius-lg" aria-label="assMat" type="text" id="assMat" name="assMat"
@@ -23,28 +23,16 @@
     <table class="custom-table"> 
         <tbody>
             <tr>
-                <td class="greenText tdTab">
-                    المعرف الوحيد
-                </td>
-                <td class="">
-                    {{vassure.assIu}}
-                </td>
+                <td class="greenText tdTab">المعرف الوحيد</td>
+                <td class="">{{vassure.assIu}}</td>
             </tr>
             <tr>
-                <td class="greenText tdTab">
-                    الهوية
-                </td>
-                <td class="">
-                    {{vassure.assNom}} {{vassure.assPrenom}}
-                </td>
+                <td class="greenText tdTab">الهوية</td>
+                <td class="">{{vassure.assNom}} {{vassure.assPrenom}}</td>
             </tr>
             <tr>
-                <td class="greenText tdTab">
-                    العنوان
-                </td>
-                <td class="">
-                    {{vassure.adresse}}
-                </td>
+                <td class="greenText tdTab">العنوان</td>
+                <td class="">{{vassure.adresse}}</td>
             </tr>
         </tbody>
     </table>
@@ -67,7 +55,7 @@
         </tr>
     </thead>
     <tbody *ngIf="found == true; else emptyRow">
-        <tr *ngFor="let c of vueAf">
+        <tr *ngFor="let c of listVueAf,let i=index">
             <td class="centerBlack">{{c.benIduCnss}}</td>
             <td class="centerBlack">{{c.benNom}}</td>
             <td class="centerBlack">{{c.benPrenom}}</td>
@@ -78,7 +66,7 @@
             <td class="centerBlack">{{c.docBen}}</td>
             <td class="centerBlack">{{c.dateDB}}</td>
             <td class="centerBlack">{{c.dateFin}}</td>
-            <td class="centerBlack"><a [routerLink]="'/test'"><i class="bi bi-search"></i></a></td>
+            <td class="centerBlack"><a class="btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="openModal(c.benIduCnss)"><i class="bi bi-search"></i></a></td>
         </tr>
     </tbody>
     <ng-template #emptyRow>
@@ -90,5 +78,80 @@
     </ng-template>
 </table>
 
-<!-- ----------------------------------------------------------------------- -->
-<!-- Button trigger modal -->
+<!-- modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">تسجيل حقوق الابناء</h1>
+        <button type="button" class="btn-close" style="order: 1;margin-left: 0;margin-right: 15px;" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form #f2="ngForm">
+            <div>
+                <table class="custom-table"> 
+                    <tbody>
+                        <tr>
+                            <td class="ModalTab">المعرف الوحيد</td>
+                            <td class="">{{beneficiaire.benIduCnss}}</td>
+                        </tr>
+                        <tr>
+                            <td class="ModalTab">الأسم</td>
+                            <td class="">{{beneficiaire.benPrenom}}</td>
+                        </tr>
+                        <tr>
+                            <td class="ModalTab">اللقب</td>
+                            <td class="">{{beneficiaire.benNom}}</td>
+                        </tr>
+                        <tr>
+                            <td class="ModalTab">تاريخ الميلاد</td>
+                            <td class="">{{beneficiaire.benDtnais}}</td>
+                        </tr>
+                        <tr>
+                            <td class="ModalTab">الرتبة</td>
+                            <td class="">
+                                {{beneficiaire.rangBen}}
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td class="ModalTab">رمز المضمون</td>
+                            <td class="">
+                                {{beneficiaire.compte}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ModalTab">رمز الوثيقة</td>
+                            <td class="">
+                                <select class="form-select" aria-label="Default select example" [(ngModel)]="beneficiaire.docBen" name="docBen" >
+                                    <option *ngFor="let l of listDocumentLibelles" [ngValue]="l">{{l}}</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ModalTab">الحق في المنافع</td>
+                            <td class="">    
+                                <select class="form-select" aria-label="Default select example" [(ngModel)]="beneficiaire.droit" name="droit">
+                                    <option *ngFor="let d of listDroits" [value]="d">{{d}}</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ModalTab">بداية الانتفاع</td>
+                            <td class=""><input class="border-radius-lg" aria-label="assCle" type="date" id="assCle" name="assCle" [(ngModel)]="beneficiaire.dateDB"></td>
+                        </tr>
+                        <tr>
+                            <td class="ModalTab">نهاية الانتفاع</td>
+                            <td class=""><input class="border-radius-lg" aria-label="assCle" type="date" id="assCle" name="assCle" [(ngModel)]="beneficiaire.dateFin"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-success greenText hover border-radius-lg" style="margin: 0 auto;display: block;">تأكيد</button>
+      </div>
+    </div>
+  </div>
+</div>

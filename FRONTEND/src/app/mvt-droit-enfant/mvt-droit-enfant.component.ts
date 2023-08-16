@@ -17,6 +17,7 @@ export class MvtDroitEnfantComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.agtcnss = new Agtcnss;
     this.services.findByIdtMatag(this.login).subscribe((res: Agtcnss) => {
       this.agtcnss = res;
     });

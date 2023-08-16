@@ -12,8 +12,10 @@ import { MvtDroitEnfantComponent } from './mvt-droit-enfant/mvt-droit-enfant.com
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UpdateBeneficiaireComponent } from './update-beneficiaire/update-beneficiaire.component';
-import { TestComponent } from './test/test.component';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { TestComponent } from './test/test.component';
+
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     BrowserModule,
     FormsModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

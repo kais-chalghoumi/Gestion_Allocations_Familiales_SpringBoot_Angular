@@ -35,4 +35,18 @@ export class AfService {
       this.URL + '/getAllByAssMatOrderByRangBen/' + assMat
     );
   }
+
+  findByBenIduCnss(benIduCnss: number): Observable<VueAF> {
+    return this.http.get<VueAF>(this.URL + '/findByBenIduCnss/' + benIduCnss);
+  }
+
+  getAllDocumentLibelles(): Observable<string[]> {
+    return this.http.get<string[]>(this.URL + '/getAllDocumentLibelles/');
+  }
+
+
+
+ 
+
+ 
 }

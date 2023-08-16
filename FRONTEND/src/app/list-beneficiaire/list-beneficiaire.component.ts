@@ -16,9 +16,13 @@ export class ListBeneficiaireComponent implements OnInit {
   assCle!: number;
   found: boolean = false;
   vassure!: Vassure;
-  vueAf!: VueAF[];
+  beneficiaire!: VueAF;
+  listVueAf!: VueAF[];
+  listDocumentLibelles!: string[];
+  listDroits!: string[];
   errorMessage: string = '';
-  @ViewChild('f') myForm!: NgForm;
+  modalValue: any;
+  @ViewChild('f1') myForm!: NgForm;
   constructor(
     private services: AfService,
     private SD: SharedDataService,
@@ -27,6 +31,7 @@ export class ListBeneficiaireComponent implements OnInit {
 
   ngOnInit(): void {
     this.vassure = new Vassure();
+    this.beneficiaire = new VueAF();
   }
 
   search() {
@@ -48,8 +53,8 @@ export class ListBeneficiaireComponent implements OnInit {
           this.services
             .getAllByAssMatOrderByRangBen(this.vassure.assMat)
             .subscribe((res: VueAF[]) => {
+              this.listVueAf = res;
               console.log(res);
-              this.vueAf = res;
             });
         } else if (result == null) {
           this.errorMessage = 'الرجاء التثبت في رقم المستعمل';
@@ -76,4 +81,17 @@ export class ListBeneficiaireComponent implements OnInit {
     this.found = false;
     this.myForm.reset();
   }
+
+  openModal(benIduCnss: any) {
+    this.modalValue = benIduCnss;
+    this.services.findByBenIduCnss(benIduCnss).subscribe((res1: VueAF) => {
+      this.beneficiaire = res1;
+      console.log(this.beneficiaire);
+    });
+    this.services.getAllDocumentLibelles().subscribe((res2: string[]) => {
+      console.log(res2);
+      this.listDocumentLibelles = res2;
+    });
+  }
+
 }

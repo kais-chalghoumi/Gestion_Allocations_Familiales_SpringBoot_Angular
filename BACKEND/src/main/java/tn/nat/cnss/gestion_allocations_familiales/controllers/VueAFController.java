@@ -21,4 +21,9 @@ public class VueAFController {
     List<VueAF> getAllByAssMatOrderByRangBen (@PathVariable("assMat") Integer assMat){
         return vueAFServices.getAllByAssMatOrderByRangBen(assMat);
     }
+
+    @GetMapping("/findByBenIduCnss/{benIduCnss}")
+    VueAF findByBenIduCnss (@PathVariable("benIduCnss") Integer benIduCnss){
+        return vueAFServices.findByBenIduCnss(benIduCnss);
+    }
 }

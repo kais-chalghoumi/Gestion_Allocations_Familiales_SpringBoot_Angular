@@ -139,3 +139,7 @@ th {
     color: black;
 }
 
+.ModalTab {
+    width: 150px;
+    padding-right: 20px;
+}
