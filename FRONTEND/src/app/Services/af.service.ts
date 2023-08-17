@@ -44,9 +44,7 @@ export class AfService {
     return this.http.get<string[]>(this.URL + '/getAllDocumentLibelles/');
   }
 
-
-
- 
-
- 
+  updateVueAF(vueAF: VueAF, benIduCnss: number): Observable<VueAF> {
+    return this.http.post<VueAF>(this.URL + '/updateVueAF/' + benIduCnss, vueAF);
+  }
 }

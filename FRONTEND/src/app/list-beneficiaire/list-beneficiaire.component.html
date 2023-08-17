@@ -47,8 +47,8 @@
             <th class="th2">تاريخ الميلاد</th>
             <th class="th2">الرتبة</th>
             <th class="th2">رمز</th>
+            <th class="th2">الوثيقة</th>
             <th class="th2">الحق في المنافع</th>
-            <th class="th2">رمز الوثيقة</th>
             <th class="th2">بداية الانتفاع</th>
             <th class="th2">نهاية الانتفاع</th>
             <th class="th2"></th>
@@ -62,8 +62,8 @@
             <td class="centerBlack">{{c.benDtnais}}</td>
             <td class="centerBlack">{{c.rangBen}}</td>
             <td class="centerBlack">{{c.compte}}</td>
-            <td class="centerBlack">{{c.droit}}</td>
             <td class="centerBlack">{{c.docBen}}</td>
+            <td class="centerBlack">{{c.droit}}</td>
             <td class="centerBlack">{{c.dateDB}}</td>
             <td class="centerBlack">{{c.dateFin}}</td>
             <td class="centerBlack"><a class="btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="openModal(c.benIduCnss)"><i class="bi bi-search"></i></a></td>
@@ -150,7 +150,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-outline-success greenText hover border-radius-lg" style="margin: 0 auto;display: block;">تأكيد</button>
+        <button type="submit" (click)="update()" data-bs-dismiss="modal" class="btn btn-outline-success greenText hover border-radius-lg" style="margin: 0 auto;display: block;">تأكيد</button>
       </div>
     </div>
   </div>

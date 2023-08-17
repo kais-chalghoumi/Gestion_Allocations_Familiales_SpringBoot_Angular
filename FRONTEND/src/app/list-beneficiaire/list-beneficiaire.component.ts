@@ -6,6 +6,7 @@ import { AfService } from '../Services/af.service';
 import { SharedDataService } from '../Services/shared-data.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-list-beneficiaire',
   templateUrl: './list-beneficiaire.component.html',
@@ -94,4 +95,10 @@ export class ListBeneficiaireComponent implements OnInit {
     });
   }
 
+  update() {
+    this.services
+      .updateVueAF(this.beneficiaire, this.beneficiaire.benIduCnss)
+      .subscribe();
+    this.search();
+  }
 }

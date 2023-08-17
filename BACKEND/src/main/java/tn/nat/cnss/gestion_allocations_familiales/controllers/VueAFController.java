@@ -24,6 +24,11 @@ public class VueAFController {
 
     @GetMapping("/findByBenIduCnss/{benIduCnss}")
     VueAF findByBenIduCnss (@PathVariable("benIduCnss") Integer benIduCnss){
-        return vueAFServices.findByBenIduCnss(benIduCnss);
+        return vueAFServices.findById(benIduCnss);
+    }
+
+    @PostMapping("/updateVueAF/{benIduCnss}")
+    VueAF updateVueAF (@RequestBody VueAF vueAF,@PathVariable("benIduCnss") Integer benIduCnss){
+        return vueAFServices.updateVueAF(vueAF,benIduCnss);
     }
 }

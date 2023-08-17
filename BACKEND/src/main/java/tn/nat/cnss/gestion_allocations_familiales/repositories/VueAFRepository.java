@@ -10,5 +10,4 @@ import java.util.List;
 public interface VueAFRepository extends JpaRepository<VueAF,Integer> {
 
     List<VueAF> getAllByAssMatOrderByRangBen (Integer assMat);
-    VueAF findByBenIduCnss (Integer benIduCnss);
 }
