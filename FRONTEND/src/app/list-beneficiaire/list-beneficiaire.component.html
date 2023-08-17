@@ -8,7 +8,7 @@
             <label class="padding">المفتاح</label>
             <input class="border-radius-lg" aria-label="assCle" type="text" id="assCle" name="assCle"
             [(ngModel)]="assCle">
-            <button class="btn greenText" type="submit" (click)="search()">بحث</button>
+            <button class="btn greenText" type="submit" (click)="search(assMat,assCle)">بحث</button>
             <button class="btn greenText" type="submit" (click)="cancel()">إلغاء</button>
         </div>
         <div *ngIf="errorMessage" class="alert-container">
@@ -115,13 +115,13 @@
                             </td>
                         </tr> 
                         <tr>
-                            <td class="ModalTab">رمز المضمون</td>
+                            <td class="ModalTab">المضمون</td>
                             <td class="">
                                 {{beneficiaire.compte}}
                             </td>
                         </tr>
                         <tr>
-                            <td class="ModalTab">رمز الوثيقة</td>
+                            <td class="ModalTab">الوثيقة</td>
                             <td class="">
                                 <select class="form-select" aria-label="Default select example" [(ngModel)]="beneficiaire.docBen" name="docBen" >
                                     <option *ngFor="let l of listDocumentLibelles" [ngValue]="l">{{l}}</option>

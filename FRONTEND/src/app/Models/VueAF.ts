@@ -5,7 +5,7 @@ export class VueAF {
   assMat!: number;
   assCle!: number;
   benDtnais!: Date;
-  droit!: number;
+  droit!: string;
   dateDB!: Date;
   dateFin!: Date;
   rangBen!: number;
