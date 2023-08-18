@@ -28,6 +28,7 @@ html{
 
 .middle-div {
     font-weight: bolder;
+    text-align: center;
 }
 
 .greenText {
@@ -106,13 +107,40 @@ html{
     padding-right: 20px;
 }
 
-th {
+/* th {
     width: 200px;
     padding-right: 2%;
+} */
+
+.thLarge {
+    width: 200px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #005B37;
+    color: white;
+    text-align: center;
 }
 
-.th2 {
-    width: 200px;
+.thMedium {
+    width: 120px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #005B37;
+    color: white;
+    text-align: center;
+}
+
+.thSmall {
+    width: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #005B37;
+    color: white;
+    text-align: center;
+}
+
+.thDate {
+    width: 100px;
     padding-top: 5px;
     padding-bottom: 5px;
     background-color: #005B37;
@@ -132,6 +160,15 @@ th {
 
 .custom-table th {
   background-color: #f2f2f2;
+}
+
+.custom {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.custom th, .custom td {
+  border: 3px solid #F5F3E5;
 }
 
 .centerBlack {

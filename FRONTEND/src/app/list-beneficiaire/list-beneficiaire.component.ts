@@ -167,5 +167,6 @@ export class ListBeneficiaireComponent implements OnInit {
         .updateVueAF(this.beneficiaire, this.beneficiaire.benIduCnss)
         .subscribe();
       this.search(this.SD.getAssMat(), this.SD.getAssCle());
+      this.search(this.SD.getAssMat(), this.SD.getAssCle());
   }
 }
