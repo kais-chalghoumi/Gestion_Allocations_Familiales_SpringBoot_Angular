@@ -9,6 +9,6 @@ export class VueAF {
   dateDB!: Date;
   dateFin!: Date;
   rangBen!: number;
-  compte!: number;
+  compte!: string;
   docBen!: string;
 }

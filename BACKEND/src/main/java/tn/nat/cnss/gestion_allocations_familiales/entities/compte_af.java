@@ -22,4 +22,7 @@ public class compte_af implements Serializable {
 
     @Column(name = "CPT_LBL")
     String CPT_LBL;
+
+    @Column(name = "CPT_LBL_AR")
+    String CPT_LBL_AR;
 }

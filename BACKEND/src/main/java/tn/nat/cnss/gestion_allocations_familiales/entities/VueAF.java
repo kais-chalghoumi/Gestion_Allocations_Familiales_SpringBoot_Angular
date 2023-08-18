@@ -5,13 +5,9 @@ import lombok.experimental.FieldDefaults;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -63,5 +59,8 @@ public class VueAF implements Serializable {
 	
 	@Column(name = "DOCBEN")
 	String docBen;
+
+//	@OneToMany(mappedBy = "vueAF")
+//	List<MvtDroitEnfant> mvtDroitEnfantList;
 
 }

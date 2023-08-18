@@ -5,6 +5,7 @@ import { NgForm } from '@angular/forms';
 import { AfService } from '../Services/af.service';
 import { SharedDataService } from '../Services/shared-data.service';
 import { Router } from '@angular/router';
+import { MvtDroitEnfant } from '../Models/MvtDroitEnfant';
 
 
 @Component({
@@ -13,17 +14,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./list-beneficiaire.component.css'],
 })
 export class ListBeneficiaireComponent implements OnInit {
+  @Input() listDocumentLibelles!: string[];
+  @ViewChild('f1') myForm!: NgForm;
   assMat!: number;
   assCle!: number;
   found: boolean = false;
   vassure!: Vassure;
   beneficiaire!: VueAF;
   listVueAf!: VueAF[];
-  @Input() listDocumentLibelles!: string[];
   listDroits!: string[];
+  listMvts!: MvtDroitEnfant[];
   errorMessage: string = '';
   modalValue: any;
-  @ViewChild('f1') myForm!: NgForm;
+  activeAccordion: number | null = null;
   constructor(
     private services: AfService,
     private SD: SharedDataService,
@@ -104,6 +107,28 @@ export class ListBeneficiaireComponent implements OnInit {
                     'يفتح الحق في المنافع العائلية للمصابين بعجز مستمر تفوق أو تعادل ن';
                 }
               });
+              // this.listVueAf.forEach((element) => {
+              //   if (element.compte == '0') {
+              //     element.compte = 'المؤمن نفسه';
+              //   } else if (
+              //     element.compte == '1' ||
+              //     element.compte == '2' ||
+              //     element.compte == '3' ||
+              //     element.compte == '4'
+              //   ) {
+              //     element.compte = 'شريك المؤمن عليه';
+              //   } else if (element.compte == '5') {
+              //     element.compte = 'والد أو والدة المؤمن عليه';
+              //   } else if (element.compte == '6') {
+              //     element.compte = 'أخ أو أخت المؤمن عليه';
+              //   } else if (
+              //     element.compte == '7' ||
+              //     element.compte == '8' ||
+              //     element.compte == '9'
+              //   ) {
+              //     element.compte = 'المحال إليه';
+              //   }
+              // });
             });
         } else if (result == null) {
           this.errorMessage = 'الرجاء التثبت في رقم المستعمل';
@@ -180,7 +205,7 @@ export class ListBeneficiaireComponent implements OnInit {
     // Droits
 
     if (this.beneficiaire.droit == 'يفتح الحق في المنافع العائلية') {
-      this.beneficiaire.droit = '2';
+      this.beneficiaire.droit = '0';
     } else if (this.beneficiaire.droit == 'الحق في المنافع العائلية متوقف') {
       this.beneficiaire.droit = '1';
     } else if (
@@ -244,6 +269,17 @@ export class ListBeneficiaireComponent implements OnInit {
       ];
     } else if (val === 'مضمون وفاة الإبن المتوفي') {
       this.listDroits = ['الحق في المنافع العائلية متوقف'];
+    }
+  }
+
+  toggleAccordion(benIduCnss: number) {
+    if (this.activeAccordion === benIduCnss) {
+      this.activeAccordion = null;
+    } else {
+      this.activeAccordion = benIduCnss;
+      this.services.getAllById_BenIduCnss(benIduCnss).subscribe((res)=>{
+        this.listMvts = res;
+      });
     }
   }
 }

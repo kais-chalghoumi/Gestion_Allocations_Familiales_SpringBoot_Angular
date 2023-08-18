@@ -9,6 +9,7 @@ export class SharedDataService {
   private sharedLogin = 'sharedLogin';
   private sharedAssMat = 'sharedAssMat';
   private sharedAssCle = 'sharedAssCle';
+  private sharedList: any[] = [];
 
   setUserLogin(value: number) {
     localStorage.setItem(this.sharedLogin, JSON.stringify(value));
@@ -35,5 +36,17 @@ export class SharedDataService {
   getAssCle(): number {
     const value = localStorage.getItem(this.sharedAssCle);
     return value ? JSON.parse(value) : null;
+  }
+
+  addToList(item: any) {
+    this.sharedList.push(item);
+  }
+
+  getList(): any[] {
+    return this.sharedList;
+  }
+
+  clearList() {
+    this.sharedList = [];
   }
 }

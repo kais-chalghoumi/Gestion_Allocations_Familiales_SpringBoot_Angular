@@ -46,7 +46,7 @@
             <th class="thMedium">الأسم</th>
             <th class="thDate">تاريخ الميلاد</th>
             <th class="thSmall">الرتبة</th>
-            <th class="thSmall">الرمز</th>
+            <th class="thMedium">الرمز</th>
             <th class="thLarge">الوثيقة</th>
             <th class="thLarge">الحق في المنافع</th>
             <th class="thDate">بداية الانتفاع</th>
@@ -55,19 +55,49 @@
         </tr>
     </thead>
     <tbody *ngIf="found == true; else emptyRow">
-        <tr *ngFor="let c of listVueAf,let i=index">
-            <td class="centerBlack">{{c.benIduCnss}}</td>
-            <td class="centerBlack">{{c.benNom}}</td>
-            <td class="centerBlack">{{c.benPrenom}}</td>
-            <td class="centerBlack">{{c.benDtnais}}</td>
-            <td class="centerBlack">{{c.rangBen}}</td>
-            <td class="centerBlack">{{c.compte}}</td>
-            <td class="centerBlack">{{c.docBen}}</td>
-            <td class="centerBlack">{{c.droit}}</td>
-            <td class="centerBlack">{{c.dateDB}}</td>
-            <td class="centerBlack">{{c.dateFin}}</td>
-            <td class="centerBlack"><a class="btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="openModal(c.benIduCnss)"><i class="bi bi-search"></i></a></td>
-        </tr>
+        <ng-container *ngFor="let c of listVueAf; let i = index">
+            <tr [class.oddRow]="i % 2 === 0" [class.evenRow]="i % 2 !== 0"  (click)="toggleAccordion(c.benIduCnss)">
+                <td class="centerBlack">{{c.benIduCnss}}</td>
+                <td class="centerBlack">{{c.benNom}}</td>
+                <td class="centerBlack">{{c.benPrenom}}</td>
+                <td class="centerBlack">{{c.benDtnais}}</td>
+                <td class="centerBlack">{{c.rangBen}}</td>
+                <td class="centerBlack">{{c.compte}}</td>
+                <td class="centerBlack">{{c.docBen}}</td>
+                <td class="centerBlack">{{c.droit}}</td>
+                <td class="centerBlack">{{c.dateDB}}</td>
+                <td class="centerBlack">{{c.dateFin}}</td>
+                <td class="centerBlack">
+                    <a class="btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="openModal(c.benIduCnss)">
+                        <i class="bi bi-search"></i>
+                    </a>
+                </td>
+            </tr>
+            <tr *ngIf="activeAccordion === c.benIduCnss">
+                <td colspan="11">
+                    <table>
+                        <tr>
+                            <th>الرتبة</th>
+                            <th>الثلاثية</th>
+                            <th>السنة</th>
+                            <th>رمز المضمون</th>
+                            <th>الاجر الوحيد</th>
+                            <th>الحق في المنافع</th>
+                            <th>عدد الأيام</th>
+                        </tr>
+                        <tr *ngFor="let m of listMvts">
+                            <td>{{ m.rangAf }}</td>
+                            <td>{{ m.trim }}</td>
+                            <td>{{ m.annee }}</td>
+                            <td>{{ m.compte }}</td>
+                            <td>{{ m.salUnique }}</td>
+                            <td>{{ m.droitAf }}</td>
+                            <td>{{ m.nbJour }}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </ng-container>
     </tbody>
     <ng-template #emptyRow>
         <tbody>
@@ -155,3 +185,5 @@
     </div>
   </div>
 </div>
+
+            

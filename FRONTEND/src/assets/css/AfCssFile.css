@@ -122,7 +122,7 @@ html{
 }
 
 .thMedium {
-    width: 120px;
+    width: 100px;
     padding-top: 5px;
     padding-bottom: 5px;
     background-color: #005B37;
@@ -179,4 +179,22 @@ html{
 .ModalTab {
     width: 150px;
     padding-right: 20px;
+}
+
+.thLight {
+    width: 100px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #566F44;
+    color: white;
+    text-align: center;
+}
+
+.oddRow {
+    background-color: #f0f0f0; /* Couleur grise */
+}
+
+/* Lignes paires */
+.evenRow {
+    background-color: #ffffff; /* Couleur blanche */
 }

@@ -5,10 +5,7 @@ import lombok.experimental.FieldDefaults;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -42,4 +39,6 @@ public class MvtDroitEnfant implements Serializable {
 	@Column(name = "ETAT")
 	Integer etat;
 
+//	@ManyToOne
+//	VueAF vueAF;
 }

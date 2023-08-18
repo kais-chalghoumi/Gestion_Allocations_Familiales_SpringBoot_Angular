@@ -5,6 +5,7 @@ import { Agtcnss } from '../Models/Agtcnss';
 import { VueAF } from '../Models/VueAF';
 import { Vassure } from '../Models/Vassure';
 import { Observable } from 'rxjs';
+import { MvtDroitEnfant } from '../Models/MvtDroitEnfant';
 
 @Injectable({
   providedIn: 'root',
@@ -45,6 +46,15 @@ export class AfService {
   }
 
   updateVueAF(vueAF: VueAF, benIduCnss: number): Observable<VueAF> {
-    return this.http.post<VueAF>(this.URL + '/updateVueAF/' + benIduCnss, vueAF);
+    return this.http.post<VueAF>(
+      this.URL + '/updateVueAF/' + benIduCnss,
+      vueAF
+    );
+  }
+
+  getAllById_BenIduCnss(benIduCnss: number): Observable<MvtDroitEnfant[]> {
+    return this.http.get<MvtDroitEnfant[]>(
+      this.URL + '/getAllById_BenIduCnss/' + benIduCnss
+    );
   }
 }
