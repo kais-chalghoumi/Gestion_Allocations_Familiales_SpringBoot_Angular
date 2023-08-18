@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { Vassure } from '../Models/Vassure';
 import { VueAF } from '../Models/VueAF';
 import { NgForm } from '@angular/forms';
@@ -19,7 +19,7 @@ export class ListBeneficiaireComponent implements OnInit {
   vassure!: Vassure;
   beneficiaire!: VueAF;
   listVueAf!: VueAF[];
-  listDocumentLibelles!: string[];
+  @Input() listDocumentLibelles!: string[];
   listDroits!: string[];
   errorMessage: string = '';
   modalValue: any;
@@ -67,16 +67,18 @@ export class ListBeneficiaireComponent implements OnInit {
                 } else if (element.docBen == 'H') {
                   element.docBen = 'بطاقة إعاقة';
                 } else if (element.docBen == 'J') {
-                  element.docBen = 'البنت التي تقوم مقام ربة البيت في رعاية إخوتها';
+                  element.docBen =
+                    'البنت التي تقوم مقام ربة البيت في رعاية إخوتها';
                 } else if (element.docBen == 'P') {
                   element.docBen = 'إبن المنتفع بجراية شيخوخة ';
                 } else if (element.docBen == 'R') {
                   element.docBen = 'إبن مضمون أجنبي مقيم بتونس';
                 } else if (element.docBen == 'S') {
-                  element.docBen = 'شهادة حضور مدرسية أوشهادة ترسيم بمؤسسة جامعية ';
+                  element.docBen =
+                    'شهادة حضور مدرسية أوشهادة ترسيم بمؤسسة جامعية ';
                 } else if (element.docBen == 'V') {
                   element.docBen = 'مضمون ولادة الإبن';
-                } else {
+                } else if (element.docBen == 'X') {
                   element.docBen = 'حق متوقف في إنتضار بحث';
                 }
               });
@@ -90,17 +92,19 @@ export class ListBeneficiaireComponent implements OnInit {
                 } else if (element.droit == '4') {
                   element.droit = 'بالغ  لا يفتح الحق في المنافع العائلية';
                 } else if (element.droit == '5') {
-                  element.droit = 'يفتح الحق في المنافع العائلية في نظام الطلبة';
+                  element.droit =
+                    'يفتح الحق في المنافع العائلية في نظام الطلبة';
                 } else if (element.droit == '6') {
                   element.droit = 'يفتح حق في المنافع العائلية للأرامل';
                 } else if (element.droit == '7') {
-                  element.droit = 'يفتح الحق في المنافع العائلية للمفصولين عن العمل لأسباب اقتصادية ';
-                } else {
-                  element.droit = 'يفتح الحق في المنافع العائلية للمصابين بعجز مستمر تفوق أو تعادل ن';
+                  element.droit =
+                    'يفتح الحق في المنافع العائلية للمفصولين عن العمل لأسباب اقتصادية ';
+                } else if (element.droit == '8') {
+                  element.droit =
+                    'يفتح الحق في المنافع العائلية للمصابين بعجز مستمر تفوق أو تعادل ن';
                 }
               });
             });
-          
         } else if (result == null) {
           this.errorMessage = 'الرجاء التثبت في رقم المستعمل';
           // Fermeture automatique de l'alerte
@@ -140,33 +144,107 @@ export class ListBeneficiaireComponent implements OnInit {
   }
 
   update() {
+    // Docs
     if (this.beneficiaire.docBen == 'مضمون وفاة الإبن المتوفي') {
       this.beneficiaire.docBen = '2';
     } else if (this.beneficiaire.docBen == 'عقد أو شهادة تدريب   ') {
       this.beneficiaire.docBen = 'A';
     } else if (this.beneficiaire.docBen == 'إبن مضمون من جنسية مغربية') {
       this.beneficiaire.docBen = 'D';
-    } else if (this.beneficiaire.docBen == 'شهادة طبية للطفل المصاب بعجز أو بداء عضال.') {
+    } else if (
+      this.beneficiaire.docBen == 'شهادة طبية للطفل المصاب بعجز أو بداء عضال.'
+    ) {
       this.beneficiaire.docBen = 'F';
     } else if (this.beneficiaire.docBen == 'بطاقة إعاقة') {
       this.beneficiaire.docBen = 'H';
-    } else if (this.beneficiaire.docBen == 'البنت التي تقوم مقام ربة البيت في رعاية إخوتها') {
+    } else if (
+      this.beneficiaire.docBen ==
+      'البنت التي تقوم مقام ربة البيت في رعاية إخوتها'
+    ) {
       this.beneficiaire.docBen = 'J';
     } else if (this.beneficiaire.docBen == 'إبن المنتفع بجراية شيخوخة ') {
       this.beneficiaire.docBen = 'P';
     } else if (this.beneficiaire.docBen == 'إبن مضمون أجنبي مقيم بتونس') {
       this.beneficiaire.docBen = 'R';
-    } else if (this.beneficiaire.docBen == 'شهادة حضور مدرسية أوشهادة ترسيم بمؤسسة جامعية ') {
+    } else if (
+      this.beneficiaire.docBen ==
+      'شهادة حضور مدرسية أوشهادة ترسيم بمؤسسة جامعية '
+    ) {
       this.beneficiaire.docBen = 'S';
     } else if (this.beneficiaire.docBen == 'مضمون ولادة الإبن') {
       this.beneficiaire.docBen = 'V';
     } else if (this.beneficiaire.docBen == 'حق متوقف في إنتضار بحث') {
       this.beneficiaire.docBen = 'X';
     }
-      this.services
-        .updateVueAF(this.beneficiaire, this.beneficiaire.benIduCnss)
-        .subscribe();
-      this.search(this.SD.getAssMat(), this.SD.getAssCle());
-      this.search(this.SD.getAssMat(), this.SD.getAssCle());
+
+    // Droits
+
+    if (this.beneficiaire.droit == 'يفتح الحق في المنافع العائلية') {
+      this.beneficiaire.droit = '2';
+    } else if (this.beneficiaire.droit == 'الحق في المنافع العائلية متوقف') {
+      this.beneficiaire.droit = '1';
+    } else if (
+      this.beneficiaire.droit == 'قاصر لا يفتح الحق في المنافع العائلية'
+    ) {
+      this.beneficiaire.droit = '3';
+    } else if (
+      this.beneficiaire.droit == 'بالغ  لا يفتح الحق في المنافع العائلية'
+    ) {
+      this.beneficiaire.droit = '4';
+    } else if (
+      this.beneficiaire.droit == 'يفتح الحق في المنافع العائلية في نظام الطلبة'
+    ) {
+      this.beneficiaire.droit = '5';
+    } else if (
+      this.beneficiaire.droit == 'يفتح حق في المنافع العائلية للأرامل'
+    ) {
+      this.beneficiaire.droit = '6';
+    } else if (
+      this.beneficiaire.droit ==
+      'يفتح الحق في المنافع العائلية للمفصولين عن العمل لأسباب اقتصادية '
+    ) {
+      this.beneficiaire.droit = '7';
+    } else if (
+      this.beneficiaire.droit ==
+      'يفتح الحق في المنافع العائلية للمصابين بعجز مستمر تفوق أو تعادل ن'
+    ) {
+      this.beneficiaire.droit = '8';
+    }
+
+    this.services
+      .updateVueAF(this.beneficiaire, this.beneficiaire.benIduCnss)
+      .subscribe();
+    this.search(this.SD.getAssMat(), this.SD.getAssCle());
+    this.search(this.SD.getAssMat(), this.SD.getAssCle());
+  }
+
+  updateListDroits(val: string) {
+    if (
+      val === 'عقد أو شهادة تدريب   ' ||
+      val === 'شهادة طبية للطفل المصاب بعجز أو بداء عضال.' ||
+      val === 'بطاقة إعاقة' ||
+      val === 'شهادة حضور مدرسية أوشهادة ترسيم بمؤسسة جامعية ' ||
+      val === 'مضمون ولادة الإبن'
+    ) {
+      this.listDroits = [
+        'يفتح الحق في المنافع العائلية',
+        'الحق في المنافع العائلية متوقف',
+        'يفتح الحق في المنافع العائلية في نظام الطلبة',
+        'يفتح حق في المنافع العائلية للأرامل',
+        'يفتح الحق في المنافع العائلية للمفصولين عن العمل لأسباب اقتصادية ',
+        'يفتح الحق في المنافع العائلية للمصابين بعجز مستمر تفوق أو تعادل ن',
+      ];
+    } else if (
+      val === 'حق متوقف في إنتضار بحث' ||
+      val === 'إبن مضمون من جنسية مغربية'
+    ) {
+      this.listDroits = [
+        'يفتح الحق في المنافع العائلية',
+        'الحق في المنافع العائلية متوقف',
+      ];
+    } else if (val === 'مضمون وفاة الإبن المتوفي') {
+      this.listDroits = ['الحق في المنافع العائلية متوقف'];
+    }
   }
 }
+

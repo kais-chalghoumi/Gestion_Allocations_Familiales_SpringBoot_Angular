@@ -123,7 +123,7 @@
                         <tr>
                             <td class="ModalTab">الوثيقة</td>
                             <td class="">
-                                <select class="form-select" aria-label="Default select example" [(ngModel)]="beneficiaire.docBen" name="docBen" >
+                                <select class="form-select" aria-label="Default select example" [(ngModel)]="beneficiaire.docBen" name="docBen" (ngModelChange)="updateListDroits($event)">
                                     <option *ngFor="let l of listDocumentLibelles" [ngValue]="l">{{l}}</option>
                                 </select>
                             </td>
