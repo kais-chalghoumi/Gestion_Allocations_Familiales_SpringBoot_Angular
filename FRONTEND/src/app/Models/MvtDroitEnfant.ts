@@ -1,12 +1,10 @@
+import { MvtDroitEnfantPK } from "./MvtDroitEnfantPK";
+
 export class MvtDroitEnfant {
-  benIduCnss!: number;
-  assMat!: number;
-  assCle!: number;
-  annee!: number;
-  trim!: number;
+  id!: MvtDroitEnfantPK;
   nbJour!: number;
   salUnique!: number;
-  droitAf!: number;
+  droitAf!: string;
   compte!: number;
   rangAf!: number;
   etat!: number;

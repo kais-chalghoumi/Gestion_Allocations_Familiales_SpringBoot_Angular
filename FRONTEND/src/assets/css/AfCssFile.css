@@ -190,8 +190,23 @@ html{
     text-align: center;
 }
 
+.customAccordion {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.customAccordion th {
+    width: 100px;
+    text-align: center;
+}
+
+.customAccordion td {
+    width: 100px;
+    text-align: center;
+}
+
 .oddRow {
-    background-color: #f0f0f0; /* Couleur grise */
+    background-color: rgb(207, 207, 207)/* Couleur grise f0f0f0*/
 }
 
 /* Lignes paires */

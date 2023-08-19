@@ -107,28 +107,28 @@ export class ListBeneficiaireComponent implements OnInit {
                     'يفتح الحق في المنافع العائلية للمصابين بعجز مستمر تفوق أو تعادل ن';
                 }
               });
-              // this.listVueAf.forEach((element) => {
-              //   if (element.compte == '0') {
-              //     element.compte = 'المؤمن نفسه';
-              //   } else if (
-              //     element.compte == '1' ||
-              //     element.compte == '2' ||
-              //     element.compte == '3' ||
-              //     element.compte == '4'
-              //   ) {
-              //     element.compte = 'شريك المؤمن عليه';
-              //   } else if (element.compte == '5') {
-              //     element.compte = 'والد أو والدة المؤمن عليه';
-              //   } else if (element.compte == '6') {
-              //     element.compte = 'أخ أو أخت المؤمن عليه';
-              //   } else if (
-              //     element.compte == '7' ||
-              //     element.compte == '8' ||
-              //     element.compte == '9'
-              //   ) {
-              //     element.compte = 'المحال إليه';
-              //   }
-              // });
+              this.listVueAf.forEach((element) => {
+                if (element.compte == '0') {
+                  element.compte = 'المؤمن نفسه';
+                } else if (
+                  element.compte == '1' ||
+                  element.compte == '2' ||
+                  element.compte == '3' ||
+                  element.compte == '4'
+                ) {
+                  element.compte = 'شريك المؤمن عليه';
+                } else if (element.compte == '5') {
+                  element.compte = 'والد أو والدة المؤمن عليه';
+                } else if (element.compte == '6') {
+                  element.compte = 'أخ أو أخت المؤمن عليه';
+                } else if (
+                  element.compte == '7' ||
+                  element.compte == '8' ||
+                  element.compte == '9'
+                ) {
+                  element.compte = 'المحال إليه';
+                }
+              });
             });
         } else if (result == null) {
           this.errorMessage = 'الرجاء التثبت في رقم المستعمل';
@@ -279,6 +279,30 @@ export class ListBeneficiaireComponent implements OnInit {
       this.activeAccordion = benIduCnss;
       this.services.getAllById_BenIduCnss(benIduCnss).subscribe((res)=>{
         this.listMvts = res;
+        this.listMvts.forEach((element) => {
+          if (element.droitAf == '0') {
+            element.droitAf = 'يفتح الحق في المنافع العائلية';
+          } else if (element.droitAf == '1') {
+            element.droitAf = 'الحق في المنافع العائلية متوقف';
+          } else if (element.droitAf == '3') {
+            element.droitAf = 'قاصر لا يفتح الحق في المنافع العائلية';
+          } else if (element.droitAf == '4') {
+            element.droitAf = 'بالغ  لا يفتح الحق في المنافع العائلية';
+          } else if (element.droitAf == '5') {
+            element.droitAf = 'يفتح الحق في المنافع العائلية في نظام الطلبة';
+          } else if (element.droitAf == '6') {
+            element.droitAf = 'يفتح حق في المنافع العائلية للأرامل';
+          } else if (element.droitAf == '7') {
+            element.droitAf =
+              'يفتح الحق في المنافع العائلية للمفصولين عن العمل لأسباب اقتصادية ';
+          } else if (element.droitAf == '8') {
+            element.droitAf =
+              'يفتح الحق في المنافع العائلية للمصابين بعجز مستمر تفوق أو تعادل ن';
+          }
+          if (element.salUnique == null) {
+            element.salUnique = 0 ;
+          }
+        });
       });
     }
   }

@@ -56,7 +56,7 @@
     </thead>
     <tbody *ngIf="found == true; else emptyRow">
         <ng-container *ngFor="let c of listVueAf; let i = index">
-            <tr [class.oddRow]="i % 2 === 0" [class.evenRow]="i % 2 !== 0"  (click)="toggleAccordion(c.benIduCnss)">
+            <tr [class.oddRow]="i % 2 === 0" [class.evenRow]="i % 2 !== 0" (click)="toggleAccordion(c.benIduCnss)">
                 <td class="centerBlack">{{c.benIduCnss}}</td>
                 <td class="centerBlack">{{c.benNom}}</td>
                 <td class="centerBlack">{{c.benPrenom}}</td>
@@ -74,24 +74,24 @@
                 </td>
             </tr>
             <tr *ngIf="activeAccordion === c.benIduCnss">
-                <td colspan="11">
-                    <table>
+                <td colspan="9">
+                    <table class="customAccordion">
                         <tr>
                             <th>الرتبة</th>
                             <th>الثلاثية</th>
                             <th>السنة</th>
                             <th>رمز المضمون</th>
                             <th>الاجر الوحيد</th>
-                            <th>الحق في المنافع</th>
+                            <th colspan="5">الحق في المنافع</th>
                             <th>عدد الأيام</th>
                         </tr>
                         <tr *ngFor="let m of listMvts">
                             <td>{{ m.rangAf }}</td>
-                            <td>{{ m.trim }}</td>
-                            <td>{{ m.annee }}</td>
+                            <td>{{ m.id.trim }}</td>
+                            <td>{{ m.id.annee }}</td>
                             <td>{{ m.compte }}</td>
                             <td>{{ m.salUnique }}</td>
-                            <td>{{ m.droitAf }}</td>
+                            <td colspan="5">{{ m.droitAf }}</td>
                             <td>{{ m.nbJour }}</td>
                         </tr>
                     </table>
