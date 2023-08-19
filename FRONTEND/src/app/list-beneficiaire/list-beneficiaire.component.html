@@ -56,17 +56,17 @@
     </thead>
     <tbody *ngIf="found == true; else emptyRow">
         <ng-container *ngFor="let c of listVueAf; let i = index">
-            <tr [class.oddRow]="i % 2 === 0" [class.evenRow]="i % 2 !== 0" (click)="toggleAccordion(c.benIduCnss)">
-                <td class="centerBlack">{{c.benIduCnss}}</td>
-                <td class="centerBlack">{{c.benNom}}</td>
-                <td class="centerBlack">{{c.benPrenom}}</td>
-                <td class="centerBlack">{{c.benDtnais}}</td>
-                <td class="centerBlack">{{c.rangBen}}</td>
-                <td class="centerBlack">{{c.compte}}</td>
-                <td class="centerBlack">{{c.docBen}}</td>
-                <td class="centerBlack">{{c.droit}}</td>
-                <td class="centerBlack">{{c.dateDB}}</td>
-                <td class="centerBlack">{{c.dateFin}}</td>
+            <tr [class.oddRow]="i % 2 === 0" [class.evenRow]="i % 2 !== 0">
+                <td class="centerBlack" (click)="toggleAccordion(c.benIduCnss)">{{c.benIduCnss}}</td>
+                <td class="centerBlack" (click)="toggleAccordion(c.benIduCnss)">{{c.benNom}}</td>
+                <td class="centerBlack" (click)="toggleAccordion(c.benIduCnss)">{{c.benPrenom}}</td>
+                <td class="centerBlack" (click)="toggleAccordion(c.benIduCnss)">{{c.benDtnais}}</td>
+                <td class="centerBlack" (click)="toggleAccordion(c.benIduCnss)">{{c.rangBen}}</td>
+                <td class="centerBlack" (click)="toggleAccordion(c.benIduCnss)">{{c.compte}}</td>
+                <td class="centerBlack" (click)="toggleAccordion(c.benIduCnss)">{{c.docBen}}</td>
+                <td class="centerBlack" (click)="toggleAccordion(c.benIduCnss)">{{c.droit}}</td>
+                <td class="centerBlack" (click)="toggleAccordion(c.benIduCnss)">{{c.dateDB}}</td>
+                <td class="centerBlack" (click)="toggleAccordion(c.benIduCnss)">{{c.dateFin}}</td>
                 <td class="centerBlack">
                     <a class="btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="openModal(c.benIduCnss)">
                         <i class="bi bi-search"></i>

@@ -238,9 +238,9 @@ export class ListBeneficiaireComponent implements OnInit {
 
     this.services
       .updateVueAF(this.beneficiaire, this.beneficiaire.benIduCnss)
-      .subscribe();
-    this.search(this.SD.getAssMat(), this.SD.getAssCle());
-    this.search(this.SD.getAssMat(), this.SD.getAssCle());
+      .subscribe(() => {
+        this.search(this.SD.getAssMat(), this.SD.getAssCle());
+      });    
   }
 
   updateListDroits(val: string) {
