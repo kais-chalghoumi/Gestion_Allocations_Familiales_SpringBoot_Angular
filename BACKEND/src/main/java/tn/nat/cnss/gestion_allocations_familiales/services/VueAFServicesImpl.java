@@ -28,6 +28,9 @@ public class VueAFServicesImpl implements VueAFServicesInterface{
     @Autowired
     AllocationFamilialeRepository allocationFamilialeRepository;
 
+    @Autowired
+    AllocationFamilialeHistServicesImpl allocationFamilialeHistServices;
+
     @Override
     public List<VueAF> getAllByAssMatOrderByRangBen(Integer assMat) {
         return vueAFRepository.getAllByAssMatOrderByRangBen(assMat);
@@ -49,9 +52,9 @@ public class VueAFServicesImpl implements VueAFServicesInterface{
         existingVueAF.setDocBen(vueAF.getDocBen());
         vueAFRepository.save(existingVueAF);
         //update allocation_familiale
-        AllocationFamilialePK allocationFamilialePK = new AllocationFamilialePK();
         if (allocationFamilialeRepository.findById(benIduCnss,vueAF.getAssMat(),vueAF.getAssCle()) == null){
             AllocationFamiliale allocationFamiliale = new AllocationFamiliale();
+            AllocationFamilialePK allocationFamilialePK = new AllocationFamilialePK();
             allocationFamilialePK.setBenIduCnss(benIduCnss);
             allocationFamilialePK.setAssMat(existingVueAF.getAssMat());
             allocationFamilialePK.setAssCle(existingVueAF.getAssCle());
@@ -81,7 +84,7 @@ public class VueAFServicesImpl implements VueAFServicesInterface{
             allocationFamiliale.setDateOpr(new Date());
             allocationFamilialeRepository.save(allocationFamiliale);
         }
-
+        allocationFamilialeHistServices.addAllocationFamilialeHist(benIduCnss,vueAF.getAssMat(),vueAF.getAssCle(),existingVueAF.getDroit(),existingVueAF.getDocBen(), existingVueAF.getDateDB(),existingVueAF.getDateFin(),existingVueAF.getRangBen(),existingVueAF.getCompte(), 69393,81,"تسجيل حقوق الابناء",new Date());
         return existingVueAF;
     }
 }
