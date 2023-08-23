@@ -31,4 +31,9 @@ public class VueAFController {
     VueAF updateVueAF (@RequestBody VueAF vueAF,@PathVariable("benIduCnss") Integer benIduCnss){
         return vueAFServices.updateVueAF(vueAF,benIduCnss);
     }
+
+    @GetMapping("/getAge/{benIduCnss}")
+    long getAge (@PathVariable("benIduCnss") Integer benIduCnss){
+        return vueAFServices.getAge(benIduCnss);
+    }
 }

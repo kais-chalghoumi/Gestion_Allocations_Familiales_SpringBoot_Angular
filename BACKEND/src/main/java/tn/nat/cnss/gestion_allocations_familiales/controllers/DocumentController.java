@@ -16,9 +16,9 @@ public class DocumentController {
     @Autowired
     DocumentServicesImpl documentServices;
 
-    @GetMapping("/getAllDocumentLibelles")
-    List<String> getAllDocumentLibelles (){
-        return documentServices.getAllDocumentLibelles();
+    @GetMapping("/getAllDocumentLibellesByAge/{age}")
+    List<String> getAllDocumentLibellesByAge (@PathVariable("age") Integer age){
+        return documentServices.getAllDocumentLibellesByAge(age);
     }
 
 

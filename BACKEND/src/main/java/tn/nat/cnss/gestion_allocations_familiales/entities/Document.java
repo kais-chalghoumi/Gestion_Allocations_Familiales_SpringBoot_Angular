@@ -24,8 +24,14 @@ public class Document implements Serializable {
 	
 	@Column(name = "DOC_LBL")
 	String libDoc;
-	
+
 	@Column(name = "DOC_LBL_AR")
 	String libDocAr;
+
+	@Column(name = "Debut_Age")
+	Integer debut_Age;
+
+	@Column(name = "Fin_Age")
+	Integer fin_Age;
 
 }

@@ -4,6 +4,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -37,19 +38,16 @@ public class VueAF implements Serializable {
 	Integer assCle;
 	
 	@Column(name = "BEN_DTNAIS")
-	@Temporal(TemporalType.DATE)
-	Date benDtnais;
+	LocalDate benDtnais;
 	
 	@Column(name = "DROIT")
 	Integer droit;
 	
 	@Column(name = "DATEDB")
-	@Temporal(TemporalType.DATE)
-	Date dateDB;
+	LocalDate dateDB;
 
 	@Column(name = "DATEFIN")
-	@Temporal(TemporalType.DATE)
-	Date dateFin;
+	LocalDate dateFin;
 	
 	@Column(name = "RANGBEN")
 	Integer rangBen;

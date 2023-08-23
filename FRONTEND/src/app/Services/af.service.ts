@@ -41,8 +41,14 @@ export class AfService {
     return this.http.get<VueAF>(this.URL + '/findByBenIduCnss/' + benIduCnss);
   }
 
-  getAllDocumentLibelles(): Observable<string[]> {
-    return this.http.get<string[]>(this.URL + '/getAllDocumentLibelles/');
+  getAge(benIduCnss: number): Observable<number> {
+    return this.http.get<number>(this.URL + '/getAge/' + benIduCnss);
+  }
+
+  getAllDocumentLibellesByAge(age: number): Observable<string[]> {
+    return this.http.get<string[]>(
+      this.URL + '/getAllDocumentLibellesByAge/' + age
+    );
   }
 
   updateVueAF(vueAF: VueAF, benIduCnss: number): Observable<VueAF> {

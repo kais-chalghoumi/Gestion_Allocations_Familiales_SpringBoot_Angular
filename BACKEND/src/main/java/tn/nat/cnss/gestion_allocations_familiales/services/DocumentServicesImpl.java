@@ -16,8 +16,8 @@ public class DocumentServicesImpl implements DocumentServicesInterface{
     DocumentRepository documentRepository;
 
     @Override
-    public List<String> getAllDocumentLibelles() {
-        return documentRepository.getAllDocumentLibelles();
+    public List<String> getAllDocumentLibellesByAge (Integer age) {
+        return documentRepository.getAllDocumentLibellesByAge(age);
     }
 
 

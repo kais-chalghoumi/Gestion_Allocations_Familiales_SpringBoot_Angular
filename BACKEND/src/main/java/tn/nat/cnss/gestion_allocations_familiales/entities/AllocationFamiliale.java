@@ -4,6 +4,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -33,13 +34,11 @@ public class AllocationFamiliale implements Serializable {
 	@Column(name = "DOC_ID")
 	String docId;
 	
-	@Temporal(TemporalType.DATE)
 	@Column(name = "DATE_DEB_AF_SU")
-	Date dtDeb;
+	LocalDate dtDeb;
 	
-	@Temporal(TemporalType.DATE)
 	@Column(name = "DATE_FIN_AF_SU")
-	Date dtFin;
+	LocalDate dtFin;
 	
 	@Column(name = "RANG_AF")
 	Integer rangAf;
@@ -56,9 +55,8 @@ public class AllocationFamiliale implements Serializable {
 	@Column(name = "NAT_OPR")
 	String natOpr;
 	
-	@Temporal(TemporalType.DATE)
 	@Column(name = "DATE_OPR")
-	Date dateOpr;
+	LocalDate dateOpr;
 	
 
 }

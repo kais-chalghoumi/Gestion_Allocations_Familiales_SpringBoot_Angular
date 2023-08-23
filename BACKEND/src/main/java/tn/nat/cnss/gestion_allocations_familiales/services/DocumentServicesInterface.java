@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface DocumentServicesInterface {
 
-    List<String> getAllDocumentLibelles ();
+    List<String> getAllDocumentLibellesByAge (Integer age);
 
 }

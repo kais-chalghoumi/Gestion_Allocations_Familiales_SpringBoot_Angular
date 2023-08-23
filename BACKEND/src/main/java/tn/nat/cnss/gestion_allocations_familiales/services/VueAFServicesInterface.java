@@ -8,6 +8,7 @@ public interface VueAFServicesInterface {
 
     List<VueAF> getAllByAssMatOrderByRangBen (Integer assMat);
     VueAF findById (Integer benIduCnss);
-
     VueAF updateVueAF (VueAF vueAF,Integer benIduCnss);
+    void verificationVueAF (VueAF vueAF,long yearsDifference);
+    long getAge (Integer benIduCnss);
 }

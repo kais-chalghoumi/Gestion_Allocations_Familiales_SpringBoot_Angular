@@ -11,8 +11,8 @@ import java.util.List;
 @Repository
 public interface DocumentRepository extends JpaRepository<Document,String> {
 
-    @Query("select d.libDocAr from Document d")
-    List<String> getAllDocumentLibelles ();
+    @Query("select d.libDocAr from Document d where :age between  d.debut_Age and d.fin_Age")
+    List<String> getAllDocumentLibellesByAge (@Param("age") Integer age);
 
 
 }

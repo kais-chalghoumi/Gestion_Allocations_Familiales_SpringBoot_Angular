@@ -4,6 +4,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -39,7 +40,7 @@ public class Vassure implements Serializable {
 	String assPrenom;
 	
 	@Column(name="BEN_DTNAIS")
-	Date assDtnais;
+	LocalDate assDtnais;
 	
 	@Column(name="BUR_COD")
 	Integer burCod;

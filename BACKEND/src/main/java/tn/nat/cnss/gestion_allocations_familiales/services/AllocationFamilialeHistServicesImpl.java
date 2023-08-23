@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import tn.nat.cnss.gestion_allocations_familiales.entities.AllocationFamilialeHist;
 import tn.nat.cnss.gestion_allocations_familiales.repositories.AllocationFamilialeHistRepository;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Slf4j
@@ -17,7 +18,7 @@ public class AllocationFamilialeHistServicesImpl implements AllocationFamilialeH
     }
 
     @Override
-    public AllocationFamilialeHist addAllocationFamilialeHist(Integer benIduCnss, Integer assMat, Integer assCle, Integer droitId, String docId, Date dtDeb, Date dtFin, Integer rangAf, Integer compte, Integer matAgt, Integer brAgt, String natOpr, Date dateOpr) {
+    public AllocationFamilialeHist addAllocationFamilialeHist(Integer benIduCnss, Integer assMat, Integer assCle, Integer droitId, String docId, LocalDate dtDeb, LocalDate dtFin, Integer rangAf, Integer compte, Integer matAgt, Integer brAgt, String natOpr, LocalDate dateOpr) {
         AllocationFamilialeHist allocationFamilialeHist = new AllocationFamilialeHist();
         allocationFamilialeHist.setBenIduCnss(benIduCnss);
         allocationFamilialeHist.setAssMat(assMat);

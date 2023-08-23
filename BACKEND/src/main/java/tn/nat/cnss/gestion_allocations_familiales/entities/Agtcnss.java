@@ -4,6 +4,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import javax.persistence.*;
 
@@ -44,9 +45,8 @@ public class Agtcnss implements Serializable {
 	@Column(name = "IDT_PRNAG")
 	String idtPrnag;
 
-	@Temporal(TemporalType.DATE)
 	@Column(name = "SAG_DATAFF")
-	Date sagDataff;
+	LocalDate sagDataff;
 
 	@Column(name = "SDR_CODE")
 	Integer sdrCode;
